@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
+from .config import settings
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--4iws!uc#2j2cwb2llj!)k&lw3=+zy^2cxqrdj2h=nai8eiq*8'
+SECRET_KEY = settings.secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -179,11 +181,11 @@ USE_TZ = True
 CORS_ALLOW_ALL_ORIGINS = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'YOUR-EMAIL'
-EMAIL_HOST_PASSWORD = 'YOUR-EMAIL-PASSWORD'
+EMAIL_HOST = settings.email_host
+EMAIL_PORT = settings.email_port
+EMAIL_USE_TLS = settings.email_use_tls
+EMAIL_HOST_USER = settings.email_user
+EMAIL_HOST_PASSWORD = settings.email_password
 
 
 # Static files (CSS, JavaScript, Images)
