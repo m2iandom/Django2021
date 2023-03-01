@@ -184,8 +184,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = settings.email_host
 EMAIL_PORT = settings.email_port
 EMAIL_USE_TLS = settings.email_use_tls
-EMAIL_HOST_USER = settings.email_user
-EMAIL_HOST_PASSWORD = settings.email_password
+EMAIL_HOST_USER = settings.email_host_user
+EMAIL_HOST_PASSWORD = settings.email_host_password
 
 
 # Static files (CSS, JavaScript, Images)
